@@ -39,7 +39,7 @@ export default function Team() {
   return (
     <section className="section team-section" id="team">
       <h2 className="team-header">CORE MANAGEMENT</h2>
-      <div className="team-grid">
+      <div className="team-grid" data-lenis-prevent>
         {coreTeam.map((member, index) => (
           <TeamCard key={`core-${index}`} member={member} />
         ))}
@@ -48,7 +48,7 @@ export default function Team() {
       <h2 className="team-header" style={{ color: 'var(--color-white)', textShadow: '4px 4px 0px var(--color-black)' }}>
         EVENT VOLUNTEERS
       </h2>
-      <div className="team-grid">
+      <div className="team-grid" data-lenis-prevent>
         {volunteers.map((member, index) => (
           <TeamCard key={`vol-${index}`} member={member} />
         ))}
