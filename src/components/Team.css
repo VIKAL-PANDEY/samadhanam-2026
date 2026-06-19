@@ -75,3 +75,40 @@
   color: var(--color-deep-purple);
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .team-header {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .team-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+    gap: 1.5rem;
+    padding: 1rem 0.5rem 2rem 0.5rem;
+    margin-bottom: 3rem;
+    width: auto;
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .team-card {
+    flex: 0 0 250px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start;
+    box-shadow: 6px 6px 0px var(--color-black);
+  }
+}
+
