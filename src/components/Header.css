@@ -45,12 +45,24 @@
 
 @media (max-width: 768px) {
   .global-header {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .header-logos {
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
   }
   .header-logo-wrapper {
-    height: 40px;
+    height: 32px !important;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .header-logo {
-    max-width: 120px;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
   }
 }
+
