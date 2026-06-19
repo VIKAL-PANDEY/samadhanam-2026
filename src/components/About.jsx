@@ -48,14 +48,14 @@ export default function About() {
     cardsRef.current.forEach((card, i) => {
       if (!card) return;
       
-      gsap.set(card, {
-        rotation: Math.random() * 20 - 10,
-        x: Math.random() * 40 - 20,
-        y: Math.random() * 40 - 20,
-        zIndex: images.length - i
-      });
-
       if (window.innerWidth >= 768) {
+        gsap.set(card, {
+          rotation: Math.random() * 20 - 10,
+          x: Math.random() * 40 - 20,
+          y: Math.random() * 40 - 20,
+          zIndex: images.length - i
+        });
+
         Draggable.create(card, {
           type: "x,y",
           bounds: galleryRef.current,
@@ -99,7 +99,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="about-gallery" ref={galleryRef}>
+      <div className="about-gallery" ref={galleryRef} data-lenis-prevent>
         {images.map((img, index) => (
           <div 
             key={index} 

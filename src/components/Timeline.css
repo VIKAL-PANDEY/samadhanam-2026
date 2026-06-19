@@ -39,7 +39,6 @@
   text-align: center;
   margin-bottom: 4rem;
   font-size: 3rem;
-  text-shadow: 4px 4px 0px var(--color-electric-blue);
   position: relative;
   z-index: 2;
 }
