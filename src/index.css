@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tai+Heritage+Pro:wght@400;700&display=swap');
+:root {
+  /* Neo-Brutalist Color Palette */
+  --color-bg: #e0f7fa; /* Light blue grid background base */
+  --color-electric-blue: #00f0ff;
+  --color-neon-green: #39ff14;
+  --color-safety-orange: #ff5e00;
+  --color-hot-pink: #ff007f;
+  --color-deep-purple: #7a00ff;
+  --color-yellow: #fffb00;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  
+  /* Structural Tokens */
+  --border-thick: 3px solid var(--color-black);
+  --border-thin: 2px solid var(--color-black);
+  --shadow-solid: 6px 6px 0px var(--color-black);
+  --shadow-solid-hover: 0px 0px 0px var(--color-black);
+  
+  /* Typography */
+  --font-heading: 'Clash Display', 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-sanskrit: 'Yatra One', cursive; /* A bold Devanagari font */
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: var(--font-body);
+  background-color: transparent; /* Allow footer to show underneath */
+  color: var(--color-black);
+  overflow-x: hidden;
+}
+
+/* Main Content Wrapper */
+.main-content {
+  background-color: var(--color-bg);
+  position: relative;
+  z-index: 1; /* Above footer */
+  margin-bottom: 100vh; /* Make room to reveal fixed footer */
+  min-height: 100vh;
+}
+
+/* Grid Background Class */
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Base Buttons */
+.btn-neo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border: var(--border-thick);
+  background-color: var(--color-hot-pink);
+  color: var(--color-white);
+  box-shadow: var(--shadow-solid);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-neo:hover {
+  box-shadow: var(--shadow-solid-hover);
+  transform: translate(6px, 6px);
+}
+
+.btn-secondary {
+  background-color: var(--color-electric-blue);
+  color: var(--color-black);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(3rem, 8vw, 8rem); line-height: 1; }
+h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; }
+
+.text-sanskrit {
+  font-family: var(--font-sanskrit);
+  background: linear-gradient(90deg, var(--color-electric-blue), var(--color-hot-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: clamp(2.5rem, 6vw, 6rem);
+}
+
+/* Utility layout */
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-neon-green);
+  border: 2px solid var(--color-black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+}
+
+.custom-cursor.active {
+  transform: scale(2.5);
+  background-color: var(--color-hot-pink);
+}
+
+/* Hide scrollbar for Lenis */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@media (hover: none) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+@media (max-width: 968px) {
+  .main-content {
+    margin-bottom: 0 !important;
+  }
+}
+

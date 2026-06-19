@@ -1,0 +1,133 @@
+.about-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-deep-purple);
+  color: var(--color-white);
+  overflow: hidden;
+  position: relative;
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+}
+
+.about-content {
+  flex: 1;
+  padding-right: 4rem;
+  z-index: 2;
+}
+
+.about-title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  line-height: 0.9;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--color-electric-blue);
+  text-shadow: 4px 4px 0px var(--color-black);
+}
+
+.about-title span {
+  display: block;
+  color: var(--color-hot-pink);
+  margin-left: 2rem;
+  font-family: 'Tai Heritage Pro', serif;
+  font-size: 30px;
+  text-transform: none;
+  line-height: 1.2;
+  margin-top: 1rem;
+  text-shadow: none;
+}
+
+.about-text-block {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 2rem;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  margin-bottom: 2rem;
+  transform: rotate(-1deg);
+}
+
+.about-text-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-yellow);
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border: var(--border-thin);
+}
+
+.about-text-block p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-gallery {
+  flex: 1;
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid-card {
+  position: absolute;
+  width: 300px;
+  height: 380px;
+  background-color: var(--color-white);
+  padding: 1rem 1rem 3rem 1rem;
+  border: var(--border-thick);
+  box-shadow: 8px 8px 0px var(--color-black);
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+}
+
+.polaroid-card:active {
+  cursor: grabbing;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  border: var(--border-thin);
+  object-fit: cover;
+}
+
+.polaroid-caption {
+  font-family: var(--font-sanskrit); /* or mono */
+  color: var(--color-black);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 968px) {
+  .about-section {
+    flex-direction: column;
+    padding: 4rem 1.5rem;
+  }
+  .about-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  .about-title {
+    margin-left: 0;
+  }
+  .about-title span {
+    margin-left: 0;
+  }
+  .about-gallery {
+    width: 100%;
+    height: 420px;
+    margin-top: 1rem;
+  }
+  .polaroid-card {
+    width: 250px;
+    height: 320px;
+    box-shadow: 6px 6px 0px var(--color-black);
+  }
+}
+

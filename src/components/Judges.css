@@ -1,0 +1,128 @@
+.judges-section {
+  background-color: var(--color-bg);
+  padding: 6rem 2rem;
+  border-bottom: var(--border-thick);
+}
+
+.judges-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--color-black);
+  text-shadow: 4px 4px 0px var(--color-neon-green);
+}
+
+.judges-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+
+.judge-badge-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: sway 3s infinite ease-in-out alternate;
+}
+
+/* Stagger animations for realism */
+.judge-badge-wrapper:nth-child(1) { animation-delay: 0s; }
+.judge-badge-wrapper:nth-child(2) { animation-delay: -1s; }
+.judge-badge-wrapper:nth-child(3) { animation-delay: -2s; }
+
+@keyframes sway {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+
+.lanyard-loop {
+  width: 60px;
+  height: 80px;
+  border: 8px solid var(--color-safety-orange);
+  border-bottom: none;
+  border-radius: 30px 30px 0 0;
+  position: absolute;
+  top: -60px;
+  z-index: 1;
+}
+
+.badge-clip {
+  width: 40px;
+  height: 15px;
+  background-color: #888;
+  border: var(--border-thick);
+  position: absolute;
+  top: -10px;
+  z-index: 3;
+  border-radius: 5px;
+}
+
+.judge-badge {
+  background-color: var(--color-white);
+  border: var(--border-thick);
+  width: 280px;
+  height: 400px;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  z-index: 2;
+}
+
+.judge-header {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  border-bottom: var(--border-thick);
+}
+
+.judge-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: var(--border-thick);
+  margin-bottom: 2rem;
+  object-fit: cover;
+  background-color: var(--color-electric-blue);
+}
+
+.judge-name {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.judge-role {
+  font-weight: bold;
+  color: var(--color-deep-purple);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.judge-barcode {
+  margin-top: auto;
+  width: 80%;
+  height: 30px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-black),
+    var(--color-black) 2px,
+    var(--color-white) 2px,
+    var(--color-white) 4px,
+    var(--color-black) 4px,
+    var(--color-black) 8px,
+    var(--color-white) 8px,
+    var(--color-white) 10px
+  );
+}

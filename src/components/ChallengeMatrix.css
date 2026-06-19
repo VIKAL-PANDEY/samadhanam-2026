@@ -1,0 +1,138 @@
+.challenge-matrix-section {
+  background-color: var(--color-electric-blue);
+  padding: 4rem 0; /* No side padding to allow full bleed marquee */
+  overflow: hidden;
+  border-top: var(--border-thick);
+  border-bottom: var(--border-thick);
+}
+
+.matrix-title {
+  text-align: center;
+  color: var(--color-black);
+  margin-bottom: 3rem;
+  background-color: var(--color-white);
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: var(--border-thick);
+  box-shadow: 6px 6px 0px var(--color-hot-pink);
+  transform: rotate(-1deg);
+  margin-left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+}
+
+/* Infinite Marquee */
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+.marquee-row {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.marquee-row.reverse {
+  animation: scroll-right 35s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-row:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Requires duplicating content in the row to loop seamlessly */
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Terminal Window Block */
+.terminal-block {
+  width: 350px;
+  background-color: var(--color-black);
+  border: var(--border-thick);
+  box-shadow: 6px 6px 0px var(--color-safety-orange);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  transition: transform 0.2s ease-out;
+  cursor: crosshair;
+}
+
+.terminal-block:hover {
+  transform: scale(1.05);
+  box-shadow: 12px 12px 0px var(--color-hot-pink);
+  z-index: 10;
+}
+
+.terminal-header {
+  background-color: var(--color-white);
+  border-bottom: var(--border-thick);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+}
+
+.btn-close { background-color: var(--color-hot-pink); }
+.btn-min { background-color: var(--color-yellow); }
+.btn-max { background-color: var(--color-neon-green); }
+
+.terminal-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  flex: 1;
+  text-align: center;
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  color: var(--color-neon-green);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.terminal-body span {
+  display: block;
+}
+
+.terminal-prompt {
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.terminal-block:hover .cursor-flash {
+  display: inline-block;
+  width: 10px;
+  height: 1.2rem;
+  background-color: var(--color-neon-green);
+  animation: blink 0.8s step-end infinite;
+  vertical-align: bottom;
+  margin-left: 5px;
+}
