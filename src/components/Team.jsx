@@ -12,7 +12,7 @@ const coreTeam = [
   { name: 'Vikal Pandey', role: 'DB Manager & Python Developer', img: 'https://i.pinimg.com/736x/cd/f8/0c/cdf80ce16d3022d6ad82958eacfa5839.jpg' },
   { name: 'Yash Bhalse', role: 'Architect', img: 'https://i.pinimg.com/736x/ac/d1/6d/acd16d60cfe25e04d8bf8c72604c1fff.jpg' },
   { name: 'Aditi Sharma', role: 'Technical Support', img: 'https://i.pinimg.com/736x/f7/a0/d1/f7a0d1339e6914180a342f3f2f378321.jpg' },
-  { name: 'Aashi Mahule', role: 'Technical Support', img: 'https://i.pinimg.com/736x/b6/6a/b4/b66ab4265693b1cdcd164de21fa74acc.jpg' },
+  { name: 'Ashi Mahule', role: 'Technical Support', img: 'https://i.pinimg.com/736x/b6/6a/b4/b66ab4265693b1cdcd164de21fa74acc.jpg' },
   { name: 'Ujwal Arya', role: 'Java Developer', img: 'https://i.pinimg.com/736x/f6/3b/58/f63b5864e73889e35faf3e12aad28dfe.jpg' }
 ];
 
